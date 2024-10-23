@@ -1,4 +1,4 @@
 class Player:
     def __init__(self, name, id):
         self.name = name
-        self.id
+        self.id = id
