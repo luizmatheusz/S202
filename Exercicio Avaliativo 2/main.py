@@ -1,5 +1,6 @@
 from database import Database
 from teacher_crud import TeacherCRUD
+from cli import TeacherCLI
 
 # Conectando ao banco de dados
 db = Database("bolt://3.239.245.61:7687", "neo4j", "acquisition-polarity-rehabilitation")
@@ -17,3 +18,6 @@ print(f"Nome: {teacher['name']}, ano de nascimento: {teacher['ano_nasc']}, CPF: 
 
 print("\nd) Alterando o CPF de um professor:")
 teacher_crud.update(name="Chris Lima", newCpf="162.052.777-77")
+
+teacherCLI = TeacherCLI(teacher_crud=teacher_crud)
+teacherCLI.run()
