@@ -5,10 +5,6 @@ db = Database("bolt://3.239.245.61:7687", "neo4j", "acquisition-polarity-rehabil
 
 # Questão 1
 print("\nQuestão 1:")
-query = "MATCH (:Player {name: $name, id: $id})"
-parameters = {"name": player.name, "id": player.id}
-db.execute_query(query, parameters)
-
 print("\na) Ano de nascimento e CPF dos professores:")
 query = "MATCH (t:Teacher) RETURN t.ano_nasc, t.cpf"
 results = db.execute_query(query)
